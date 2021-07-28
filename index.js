@@ -4,11 +4,13 @@ const { ApolloGateway } = require('@apollo/gateway');
 
 const supergraphSchema = ''; // TODO!
 
+// initialize a new Apollo gateway and pass it the complete composed schema for our supergraph
 const gateway = new ApolloGateway({
 
   supergraphSdl: supergraphSchema
 });
 
+// initialize Apollo Server and pass our gateway instance
 const server = new ApolloServer({
   gateway,
 });
