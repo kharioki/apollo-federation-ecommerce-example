@@ -1,12 +1,11 @@
 const { ApolloServer } = require('apollo-server');
 const { ApolloGateway } = require('@apollo/gateway');
+const { readFileSync } = require('fs');
 
-
-const supergraphSchema = ''; // TODO!
+const supergraphSchema = readFileSync('./supergraph.graphql').toString();
 
 // initialize a new Apollo gateway and pass it the complete composed schema for our supergraph
 const gateway = new ApolloGateway({
-
   supergraphSdl: supergraphSchema
 });
 
